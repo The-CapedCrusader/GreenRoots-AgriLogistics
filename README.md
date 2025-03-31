@@ -1,2 +1,13 @@
 # GreenRoots-AgriLogistics
-GreenRoots-AgriLogistics: A web application for grading and optimizing agricultural packaging and transportation systems. Helps farmers and distributors evaluate logistics processes based on efficiency, sustainability, and compliance with industry standards.
+A comprehensive web application for grading and optimizing agricultural packaging and transportation systems. GreenRoots helps farmers, distributors, and food companies evaluate their logistics processes based on efficiency, sustainability, and compliance with industry standards.
+Features
+
+Packaging quality assessment tools
+Transportation efficiency metrics
+Sustainability scoring
+Compliance checkers for agricultural regulations
+Performance analytics and reporting
+Optimization recommendations
+Weather forecast 
+
+GreenRoots simplifies complex agricultural supply chain management while promoting environmentally responsible practices.
