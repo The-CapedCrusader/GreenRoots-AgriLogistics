@@ -4,7 +4,7 @@ A comprehensive web application for grading and optimizing agricultural packagin
 
 ## Demo
 [![GreenRoots Demo](https://img.youtube.com/vi/MzCN40Itnzo/0.jpg)](https://youtu.be/MzCN40Itnzo?si=ZPYt_NvO7C9j8ST0)
-*Click the image above to watch our demo video*
+
 
 ## Features
 - Packaging quality assessment tools
