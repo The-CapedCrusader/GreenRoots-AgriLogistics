@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GreenRoots</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+.category-filter {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.stats-panel {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.temperature-alert {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.humidity-alert {
+    color: #0dcaf0;
+    font-weight: bold;
+}
+
+.product-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.status-active {
+    background: #198754;
+    color: white;
+}
+
+.status-low {
+    background: #ffc107;
+    color: black;
+}
+
+.device-info {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+</style>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="#" class="navbar-brand p-0 d-flex align-items-center">
+                    <img src="img/leaf-design.png" alt="Leaf Design" style="width:50px; height:auto; margin-right:10px;">
+                    <h1 class="m-0" style="font-size:24px;">GreenRoots</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="Tracking.html" class="nav-item nav-link active">Product Tracking</a>
+                        <a href="VehicleTracking.html" class="nav-item nav-link">Vehicle Tracking</a>
+                        <a href="weatherForecast.html" class="nav-item nav-link">Forecast</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="packaging.html" class="dropdown-item">Packaging</a>
+                                <a href="workers.html" class="dropdown-item">Workers</a>
+                               
+                            </div>
+                        </div>
+                        <a href="Grading.html" class="nav-item nav-link">Grading</a>
+                    </div>
+                    <a href="indexWithoutButtons.html" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Log out</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown">Tracking</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                                   
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Product Tracking</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+         
+
+
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-8">
+                        <div id="map" style="height: 600px; width: 100%; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);"></div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="product-legend" style="background: #f8f9fa; padding: 25px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); margin-bottom: 20px;">
+                            <h3 style="color: #198754; margin-bottom: 20px;">Available Products</h3>
+                            <div id="legendContent" style="max-height: 300px; overflow-y: auto;">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        <div class="tracking-form" style="background: #f8f9fa; padding: 25px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+                            <h3 style="color: #198754; margin-bottom: 20px;">Track Specific Product</h3>
+                            <div class="form-group mb-3">
+                                <input type="text" id="productId" class="form-control" placeholder="Enter Product ID" style="padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
+                            </div>
+                            <button onclick="trackProduct()" class="btn btn-secondary w-100" style="padding: 10px;">Track Product</button>
+                        </div>
+                       
+                        <div class="new-product-form" style="background: #f8f9fa; padding: 25px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); margin-top: 20px;">
+                            <h3 style="color: #198754; margin-bottom: 20px;">Add New Product</h3>
+                            <form id="newProductForm">
+                                <div class="form-group mb-2">
+                                    <input type="text" id="newProductName" class="form-control" placeholder="Product Name" required>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="text" id="newProductId" class="form-control" placeholder="Product ID (e.g., NEWPROD001)" required>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="number" id="newProductLatitude" class="form-control" placeholder="Latitude" step="0.0001" required>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="number" id="newProductLongitude" class="form-control" placeholder="Longitude" step="0.0001" required>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="text" id="newProductDetails" class="form-control" placeholder="Product Details">
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="text" id="newProductQuantity" class="form-control" placeholder="Quantity">
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="text" id="newProductPrice" class="form-control" placeholder="Price">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input type="text" id="newProductSeason" class="form-control" placeholder="Season">
+                                </div>
+                                <button type="button" onclick="addNewProduct()" class="btn btn-secondary w-100">Add Product</button>
+                            </form>
+                        </div>
+                            <div id="productInfo" class="mt-4" style="display: none; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+                            <h4 style="color: #198754; margin-bottom: 15px;">Product Information</h4>
+                            <div id="productDetails"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Add Leaflet CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+        
+        <!-- Add Leaflet JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+        
+        <script>
+            // Initialize map centered on Bangladesh
+let products = {};
+const map = L.map('map', {
+    attributionControl: false
+}).setView([23.8103, 90.4125], 7);
+
+// Add OpenStreetMap tiles
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: ''
+}).addTo(map);
+
+// Store markers globally
+const markers = {};
+
+// Function to create popup content
+function createPopupContent(product, id) {
+    return `
+        <div style="min-width: 200px; padding: 10px;">
+            <h4 style="color: #0d6efd; margin-bottom: 10px;">${product.icon} ${product.name}</h4>
+            <p><strong>ID:</strong> ${id}</p>
+            <p><strong>Location:</strong> ${product.details}</p>
+            <p><strong>Quantity:</strong> ${product.quantity}</p>
+            <p><strong>Price:</strong> ${product.price}</p>
+            <p><strong>Season:</strong> ${product.season}</p>
+        </div>
+    `;
+}
+
+// Load products from database
+async function loadProducts() {
+    try {
+        const response = await fetch('php/get_products.php');
+        products = await response.json();
+        initializeMap();
+    } catch (error) {
+        console.error('Error loading products:', error);
+    }
+}
+async function addNewProduct() {
+    console.log("Add Product function called");
+    
+    const productData = {
+        productId: document.getElementById('newProductId').value,
+        name: document.getElementById('newProductName').value,
+        latitude: parseFloat(document.getElementById('newProductLatitude').value),
+        longitude: parseFloat(document.getElementById('newProductLongitude').value),
+        details: document.getElementById('newProductDetails').value,
+        quantity: document.getElementById('newProductQuantity').value,
+        price: document.getElementById('newProductPrice').value,
+        season: document.getElementById('newProductSeason').value
+    };
+
+    console.log("Product Data:", productData);
+
+    // Basic validation
+    if (!productData.name || !productData.productId || isNaN(productData.latitude) || isNaN(productData.longitude)) {
+        alert('Please fill in all required fields correctly');
+        console.log("Validation failed", productData);
+        return;
+    }
+
+    try {
+        console.log("Sending fetch request to add_product.php");
+        const response = await fetch('php/add_product.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(productData)
+        });
+
+        console.log("Response received:", response);
+        const result = await response.json();
+        console.log("Result:", result);
+
+        if (result.success) {
+            console.log("Product added successfully");
+            await loadProducts();
+            document.getElementById('newProductForm').reset();
+            alert(`Product ${productData.productId} added successfully!`);
+        } else {
+            console.error("Error from server:", result.error);
+            alert('Error adding product: ' + (result.error || 'Unknown error'));
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error adding product. Please try again.');
+    }
+}
+// Initialize all markers and legend
+function initializeMap() {
+    // Clear existing markers
+    Object.values(markers).forEach(marker => map.removeLayer(marker));
+    
+    const legendContent = document.getElementById('legendContent');
+    let legendHTML = '';
+
+    Object.entries(products).forEach(([id, product]) => {
+        // Create custom icon
+        const customIcon = L.divIcon({
+            html: `<span style="font-size: 30px;">${product.icon}</span>`,
+            className: 'custom-icon',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15]
+        });
+
+        // Create marker
+        const marker = L.marker(product.location, {icon: customIcon})
+            .bindPopup(createPopupContent(product, id))
+            .addTo(map);
+
+        // Store marker reference
+        markers[id] = marker;
+
+        // Add to legend
+        legendHTML += `
+            <div class="legend-item" style="margin-bottom: 10px; cursor: pointer; padding: 5px; border-radius: 5px; transition: background-color 0.3s;" 
+                 onmouseover="this.style.backgroundColor='#e9ecef'" 
+                 onmouseout="this.style.backgroundColor='transparent'"
+                 onclick="focusProduct('${id}')">
+                <span style="font-size: 20px; margin-right: 10px;">${product.icon}</span>
+                <span>${product.name} (${id})</span>
+            </div>
+        `;
+    });
+
+    legendContent.innerHTML = legendHTML;
+}
+
+// Function to focus on specific product
+function focusProduct(id) {
+    const product = products[id];
+    if (product) {
+        map.setView(product.location, 10);
+        markers[id].openPopup();
+        
+        // Update product info panel
+        document.getElementById('productDetails').innerHTML = createPopupContent(product, id);
+        document.getElementById('productInfo').style.display = 'block';
+    }
+}
+
+// Function to track product by ID
+function trackProduct() {
+    const productId = document.getElementById('productId').value.toUpperCase();
+    focusProduct(productId);
+}
+
+// Load products when page loads
+document.addEventListener('DOMContentLoaded', loadProducts);
+        </script>
+        
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GreenRoots</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Add this in the <head> section of your HTML -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+function generatePDFCertificate(productData, certificateNumber) {
+    // Import jsPDF
+    const { jsPDF } = window.jspdf;
+
+    // Create a new PDF document
+    const doc = new jsPDF({
+        orientation: 'landscape',
+        unit: 'mm',
+        format: 'a4'
+    });
+
+    // Set background color
+    doc.setFillColor(240, 240, 240);
+    doc.rect(0, 0, 297, 210, 'F');
+
+    // Add border
+    doc.setDrawColor(0, 128, 0);
+    doc.setLineWidth(5);
+    doc.rect(10, 10, 277, 190);
+
+    // Add logo or government seal (placeholder)
+    doc.setFillColor(0, 128, 0);
+    doc.circle(30, 30, 15, 'F');
+
+    // Add text
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(20);
+    doc.setTextColor(0, 100, 0);
+    doc.text('GOVERNMENT AGRICULTURAL CERTIFICATION', 148, 40, 'center');
+
+    // Subtitle
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(12);
+    doc.text('Official Product Verification Certificate', 148, 50, 'center');
+
+    // Product Details
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(14);
+    doc.text(`Product: ${productData.name}`, 30, 80);
+
+    // Details
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(12);
+    doc.text(`Certificate Number: ${certificateNumber}`, 30, 90);
+    doc.text(`Details: ${productData.details}`, 30, 100);
+    doc.text(`Quantity: ${productData.quantity}`, 30, 110);
+    doc.text(`Price: ${productData.price}`, 30, 120);
+    doc.text(`Season: ${productData.season}`, 30, 130);
+    doc.text(`Location: Lat ${productData.location[0]}, Lon ${productData.location[1]}`, 30, 140);
+
+    // Verification QR Code (Placeholder)
+    doc.setFontSize(10);
+    doc.text('Verification QR Code Placeholder', 30, 160);
+
+    // Official Stamp Area
+    doc.setDrawColor(0, 0, 0);
+    doc.setLineWidth(1);
+    doc.rect(200, 160, 50, 30);
+    doc.text('Official\nStamp', 225, 175, 'center');
+
+    // Footer
+    doc.setFontSize(8);
+    doc.text('This is a computer-generated certificate. Verified by Government Agricultural Department', 148, 200, 'center');
+
+    // Save the PDF
+    doc.save(`${productData.name}_Certificate_${certificateNumber}.pdf`);
+}
+
+// Modify the download button event listener
+document.getElementById('downloadCertBtn').addEventListener('click', function() {
+    const productSelect = document.getElementById('productSelect');
+    const certificateNumber = document.getElementById('certificateNumber');
+    
+    // Check if product and certificate number are valid
+    if (productSelect.value && certificateNumber.value.length === 8) {
+        const selectedProduct = products[productSelect.value];
+        generatePDFCertificate(selectedProduct, certificateNumber.value);
+    } else {
+        alert('Please verify the product and certificate number first.');
+    }
+});
+</script>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="#" class="navbar-brand p-0 d-flex align-items-center">
+                    <img src="img/leaf-design.png" alt="Leaf Design" style="width:50px; height:auto; margin-right:10px;">
+                    <h1 class="m-0" style="font-size:24px;">GreenRoots</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="Tracking.html" class="nav-item nav-link">Product Tracking</a>
+                        <a href="VehicleTracking.html" class="nav-item nav-link active">Vehicle Tracking</a>
+                        <a href="weatherForecast.html" class="nav-item nav-link">Forecast</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="packaging.html" class="dropdown-item">Packaging</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                              
+                            </div>
+                        </div>
+                        <a href="Grading.html" class="nav-item nav-link">Grading</a>
+                    </div>
+                    <a href="indexWithoutButtons.html" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Log out</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown">Testimonial</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Testimonial</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+        <div class="container mt-5">
+            <h2>Worker Management</h2>
+            
+            <!-- Add Worker Form -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    Add New Worker
+                </div>
+                <div class="card-body">
+                    <form action="process.php" method="POST">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>First Name</label>
+                                <input type="text" name="first_name" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Last Name</label>
+                                <input type="text" name="last_name" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Phone</label>
+                                <input type="tel" name="phone" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Department</label>
+                                <input type="text" name="department" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Position</label>
+                                <input type="text" name="position" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Hire Date</label>
+                                <input type="date" name="hire_date" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Salary</label>
+                                <input type="number" name="salary" class="form-control" required>
+                            </div>
+                        </div>
+                        <button type="submit" name="action" value="create" class="btn btn-secondary">Add Worker</button>
+                    </form>
+                </div>
+            </div>
+    
+            <!-- Workers List -->
+            <div class="card">
+                <div class="card-header">
+                    Workers List
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Department</th>
+                                <th>Position</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            require_once 'workers.php';
+                            $workerManager = new WorkerManager($pdo);
+                            $workers = $workerManager->getAllWorkers();
+                            
+                            foreach($workers as $worker): ?>
+                            <tr>
+                                <td><?php echo $worker['id']; ?></td>
+                                <td><?php echo $worker['first_name'] . ' ' . $worker['last_name']; ?></td>
+                                <td><?php echo $worker['email']; ?></td>
+                                <td><?php echo $worker['department']; ?></td>
+                                <td><?php echo $worker['position']; ?></td>
+                                <td>
+                                    <a href="edit.php?id=<?php echo $worker['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                                    <a href="process.php?action=delete&id=<?php echo $worker['id']; ?>" 
+                                       class="btn btn-sm btn-danger" 
+                                       onclick="return confirm('Are you sure?')">Delete</a>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+         
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+</body>
+
+</html>

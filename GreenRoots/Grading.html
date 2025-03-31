@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GreenRoots</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="#" class="navbar-brand p-0 d-flex align-items-center">
+                    <img src="img/leaf-design.png" alt="Leaf Design" style="width:50px; height:auto; margin-right:10px;">
+                    <h1 class="m-0" style="font-size:24px;">GreenRoots</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="Tracking.html" class="nav-item nav-link">Product Tracking</a>
+                        <a href="VehicleTracking.html" class="nav-item nav-link active">Vehicle Tracking</a>
+                        <a href="weatherForecast.html" class="nav-item nav-link">Forecast</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="packaging.html" class="dropdown-item">Packaging</a>
+                                <a href="workers.html" class="dropdown-item">workers</a>
+                              
+                            </div>
+                        </div>
+                        <a href="Grading.html" class="nav-item nav-link">Grading</a>
+                    </div>
+                    <a href="indexWithoutButtons.html" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Log out</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <h1 class="text-white animated slideInDown">Grading</h1>
+                            <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                                   
+                                    <li class="breadcrumb-item text-white active" aria-current="page">Grading</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+        <!-- Grading Section Start -->
+<div class="container-xxl py-5">
+    <div class="container px-lg-5">
+        <!-- Section Title -->
+        <div class="section-title position-relative text-center mb-5">
+            <h1 class="display-5 mb-0">GreenRoots Agricultural Grading System</h1>
+            <p class="text-primary mt-2">Precision Quality Assessment for Agricultural Produce</p>
+        </div>
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5">
+                    <h2 class="display-5 mb-0">Product Grading Lookup</h2>
+                    <p class="text-primary mt-2">Find Detailed Grading Information for Specific Products</p>
+                </div>
+        
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-light">
+                                <h4 class="card-title text-primary">
+                                    <i class="fas fa-search me-2"></i>Search Product Grading
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="input-group mb-3">
+                                    <input type="text" id="productSearchInput" class="form-control" placeholder="Enter Product Name (e.g., Basmati Rice)" aria-label="Product Search">
+                                    <button class="btn btn-secondary" type="button" id="searchGradingBtn">
+                                        <i class="fas fa-chart-bar me-2"></i>Get Grading
+                                    </button>
+                                </div>
+                                <div id="gradingResultContainer" class="mt-3">
+                                    <!-- Grading Results Will Appear Here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            const products = {
+                'RICE001': {
+                    name: 'Basmati Rice',
+                    location: [24.3745, 88.6042],
+                    icon: '🌾',
+                    details: 'Premium Basmati Rice from Rajshahi Division',
+                    quantity: '500 tons',
+                    price: '৳65/kg',
+                    season: 'Year-round',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+                'JUTE002': {
+                    name: 'Raw Jute',
+                    grading: {
+                        premium: 35,
+                        standard: 50,
+                        processing: 15,
+                        qualityScore: 85,
+                        key_criteria: [
+                            'Fiber Length',
+                            'Strength',
+                            'Color',
+                            'Impurity Level'
+                        ]
+                    }
+                },
+                'RICE001': {
+                    name: 'Basmati Rice',
+                    location: [24.3745, 88.6042],
+                    icon: '🌾',
+                    details: 'Premium Basmati Rice from Rajshahi Division',
+                    quantity: '500 tons',
+                    price: '৳65/kg',
+                    season: 'Year-round',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+                'TEA003': {
+                    name: 'Green Tea',
+                    location: [24.8949, 91.8687],
+                    icon: '🍃',
+                    details: 'Organic Green Tea from Sylhet Division',
+                    quantity: '200 tons',
+                    price: '৳400/kg',
+                    season: 'March-November',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+               'MANGO004': {
+                    name: 'Rajshahi Mango',
+                    location: [24.7029, 88.9548],
+                    icon: '🥭',
+                    details: 'Sweet Himsagar Mango from Rajshahi',
+                    quantity: '150 tons',
+                    price: '৳120/kg',
+                    season: 'May-July',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+                'POTATO005': {
+                    name: 'Diamond Potato',
+                    location: [25.1324, 89.2663],
+                    icon: '🥔',
+                    details: 'Premium Potato from Rangpur Division',
+                    quantity: '400 tons',
+                    price: '৳25/kg',
+                    season: 'November-March',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+                'FISH006': {
+                    name: 'Hilsa Fish',
+                    location: [22.3569, 90.3512],
+                    icon: '🐟',
+                    details: 'Fresh Hilsa from Barisal Division',
+                    quantity: '100 tons',
+                    price: '৳1200/kg',
+                    season: 'July-September',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+                'SPICE011': {
+                    name: 'Cinnamon Sticks',
+                    location: [23.5423, 90.3324],
+                    icon: '🧂',
+                    details: 'Premium Ceylon Cinnamon from Chattogram',
+                    quantity: '80 tons',
+                    price: '৳850/kg',
+                    season: 'Year-round',
+                    status: 'active',
+                    deviceId: 'DEV001',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+                'HONEY012': {
+                    name: 'Sundarban Honey',
+                    location: [22.2587, 89.5456],
+                    icon: '🍯',
+                    details: 'Wild Honey from Sundarbans',
+                    quantity: '30 tons',
+                    price: '৳1200/kg',
+                    season: 'April-June',
+                    status: 'active',
+                    deviceId: 'DEV002',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+                'SHRIMP013': {
+                    name: 'Fresh Water Shrimp',
+                    location: [22.8456, 89.5403],
+                    icon: '🦐',
+                    details: 'Premium Shrimp from Khulna',
+                    quantity: '150 tons',
+                    price: '৳800/kg',
+                    season: 'Year-round',
+                    status: 'low',
+                    deviceId: 'DEV003',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+                'COCONUT014': {
+                    name: 'Green Coconut',
+                    location: [21.8234, 90.1234],
+                    icon: '🥥',
+                    details: 'Fresh Coconuts from Coastal Region',
+                    quantity: '200 tons',
+                    price: '৳40/piece',
+                    season: 'Year-round',
+                    status: 'active',
+                    deviceId: 'DEV004',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+                'LICHI007': {
+                    name: 'Dinajpur Lichi',
+                    location: [25.6279, 88.6332],
+                    icon: '🍈',
+                    details: 'Sweet Lichi from Dinajpur Region',
+                    quantity: '80 tons',
+                    price: '৳250/kg',
+                    season: 'May-June',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+                'VEGE008': {
+                    name: 'Organic Vegetables',
+                    location: [23.4567, 90.1234],
+                    icon: '🥬',
+                    details: 'Mixed Vegetables from Dhaka Division',
+                    quantity: '250 tons',
+                    price: 'Varies',
+                    season: 'Year-round',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+                'DATES009': {
+                    name: 'Date Palm Jaggery',
+                    location: [23.1819, 89.2337],
+                    icon: '🌴',
+                    details: 'Traditional Date Palm Jaggery from Jessore',
+                    quantity: '50 tons',
+                    price: '৳400/kg',
+                    season: 'December-February',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+                'SPICE010': {
+                    name: 'Mixed Spices',
+                    location: [24.0182, 89.8212],
+                    icon: '🌶️',
+                    details: 'Premium Spice Mix from Tangail',
+                    quantity: '120 tons',
+                    price: 'Varies',
+                    season: 'Year-round',
+                    grading: {
+                        premium: 45,
+                        standard: 40,
+                        processing: 15,
+                        qualityScore: 92,
+                        key_criteria: [
+                            'Grain Length',
+                            'Aroma',
+                            'Cooking Consistency',
+                            'Moisture Content'
+                        ]
+                    }
+                },
+
+                // Add grading for other existing products...
+            };
+        
+            document.getElementById('searchGradingBtn').addEventListener('click', function() {
+                const searchInput = document.getElementById('productSearchInput').value.trim();
+                const resultContainer = document.getElementById('gradingResultContainer');
+                
+                // Find product by name
+                const productKey = Object.keys(products).find(key => 
+                    products[key].name.toLowerCase() === searchInput.toLowerCase()
+                );
+        
+                if (productKey) {
+                    const product = products[productKey];
+                    const grading = product.grading;
+        
+                    resultContainer.innerHTML = `
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                <h4 class="text-primary">${product.name} Grading Details</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>Grading Distribution</h5>
+                                        <canvas id="productGradingChart"></canvas>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5>Quality Assessment</h5>
+                                        <ul class="list-group">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Quality Score
+                                                <span class="badge bg-primary rounded-pill">${grading.qualityScore}/100</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Premium Grade
+                                                <span class="badge bg-success rounded-pill">${grading.premium}%</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Standard Grade
+                                                <span class="badge bg-warning rounded-pill">${grading.standard}%</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Processing Grade
+                                                <span class="badge bg-danger rounded-pill">${grading.processing}%</span>
+                                            </li>
+                                        </ul>
+                                        <h5 class="mt-3">Key Grading Criteria</h5>
+                                        <div class="badge-container">
+                                            ${grading.key_criteria.map(criteria => 
+                                                `<span class="badge bg-info me-2 mb-2">${criteria}</span>`
+                                            ).join('')}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+        
+                    // Create pie chart for grading distribution
+                    const ctx = document.getElementById('productGradingChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Premium Grade', 'Standard Grade', 'Processing Grade'],
+                            datasets: [{
+                                data: [grading.premium, grading.standard, grading.processing],
+                                backgroundColor: [
+                                    'rgba(54, 162, 235, 0.6)',
+                                    'rgba(255, 206, 86, 0.6)',
+                                    'rgba(255, 99, 132, 0.6)'
+                                ]
+                            }]
+                        },
+                        options: {
+                            responsive: true
+                        }
+                    });
+                } else {
+                    resultContainer.innerHTML = `
+                        <div class="alert alert-warning">
+                            No grading information found for "${searchInput}". 
+                            Please check the product name and try again.
+                        </div>
+                    `;
+                }
+            });
+        </script>
+
+        <!-- Grading Overview Cards -->
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-light">
+                        <h4 class="card-title text-primary">
+                            <i class="fas fa-chart-line me-2"></i>Grading Methodology
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Visual Inspection
+                                <span class="badge bg-primary rounded-pill">100%</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Chemical Analysis
+                                <span class="badge bg-primary rounded-pill">85%</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Physical Measurements
+                                <span class="badge bg-primary rounded-pill">90%</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Traceability Tracking
+                                <span class="badge bg-primary rounded-pill">95%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-light">
+                        <h4 class="card-title text-primary">
+                            <i class="fas fa-award me-2"></i>Grading Parameters
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="progress-container">
+                            <div class="progress-label">Freshness</div>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                            </div>
+
+                            <div class="progress-label mt-3">Size Consistency</div>
+                            <div class="progress">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                            </div>
+
+                            <div class="progress-label mt-3">Organic Certification</div>
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-light">
+                        <h4 class="card-title text-primary">
+                            <i class="fas fa-tachometer-alt me-2"></i>Quality Metrics
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="qualityMetricsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Grading Criteria -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title text-primary">
+                            <i class="fas fa-balance-scale me-2"></i>Comprehensive Grading Criteria
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Product Category</th>
+                                        <th>Premium Grade (A+)</th>
+                                        <th>Standard Grade (A)</th>
+                                        <th>Processing Grade (B)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Fresh Fruits</strong></td>
+                                        <td>
+                                            - 100% Color Development
+                                            - No Blemishes
+                                            - Uniform Size
+                                            - Peak Ripeness
+                                        </td>
+                                        <td>
+                                            - Minor Color Variations
+                                            - Small Superficial Marks
+                                            - Slight Size Variations
+                                        </td>
+                                        <td>
+                                            - Significant Color Changes
+                                            - Multiple Surface Defects
+                                            - Suitable for Processing
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vegetables</strong></td>
+                                        <td>
+                                            - Crisp Texture
+                                            - Vibrant Color
+                                            - No Pest Damage
+                                            - Organic Certification
+                                        </td>
+                                        <td>
+                                            - Minor Texture Variations
+                                            - Light Discoloration
+                                            - Small Pest Marks
+                                        </td>
+                                        <td>
+                                            - Soft Texture
+                                            - Significant Discoloration
+                                            - Suitable for Cooking/Processing
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inspection and Tracking Section -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-light">
+                        <h4 class="card-title text-primary">
+                            <i class="fas fa-clipboard-check me-2"></i>Inspection Process
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="timeline">
+                            <li>Initial Visual Assessment</li>
+                            <li>Detailed Measurement</li>
+                            <li>Chemical Residue Testing</li>
+                            <li>Packaging Evaluation</li>
+                            <li>Final Quality Certification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-light">
+                        <h4 class="card-title text-primary">
+                            <i class="fas fa-truck me-2"></i>Tracking System
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="tracking-steps">
+                            <div class="step active">Farm Origin</div>
+                            <div class="step">Initial Processing</div>
+                            <div class="step">Quality Verification</div>
+                            <div class="step">Distribution</div>
+                            <div class="step">Retail</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Grading Section End -->
+
+<!-- Chart Dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Quality Metrics Radar Chart
+    const ctx = document.getElementById('qualityMetricsChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['Freshness', 'Size', 'Color', 'Organic', 'Traceability'],
+            datasets: [{
+                label: 'Quality Metrics',
+                data: [90, 85, 88, 75, 92],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgb(54, 162, 235)',
+                pointBackgroundColor: 'rgb(54, 162, 235)'
+            }]
+        },
+        options: {
+            responsive: true,
+            scale: {
+                ticks: {
+                    beginAtZero: true,
+                    max: 100
+                }
+            }
+        }
+    });
+</script>
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-header bg-light">
+                <h4 class="card-title text-primary">
+                    <i class="fas fa-chart-line me-2"></i>Grading Distribution Over Time
+                </h4>
+            </div>
+            <div class="card-body">
+                <canvas id="gradingTrendChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-header bg-light">
+                <h4 class="card-title text-primary">
+                    <i class="fas fa-layer-group me-2"></i>Crop-Specific Grading Performance
+                </h4>
+            </div>
+            <div class="card-body">
+                <canvas id="cropGradingPerformanceChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Grading Distribution Trend Chart
+    const gradingTrendCtx = document.getElementById('gradingTrendChart').getContext('2d');
+    new Chart(gradingTrendCtx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [
+                {
+                    label: 'Premium Grade (A+)',
+                    data: [25, 28, 30, 32, 35, 37],
+                    borderColor: 'rgb(54, 162, 235)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Standard Grade (A)',
+                    data: [60, 58, 56, 54, 52, 50],
+                    borderColor: 'rgb(255, 206, 86)',
+                    backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                    tension: 0.1
+                },
+                {
+                    label: 'Processing Grade (B)',
+                    data: [15, 14, 14, 14, 13, 13],
+                    borderColor: 'rgb(255, 99, 132)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    tension: 0.1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Percentage of Produce'
+                    }
+                }
+            }
+        }
+    });
+
+    // Crop-Specific Grading Performance Chart
+    const cropGradingPerformanceCtx = document.getElementById('cropGradingPerformanceChart').getContext('2d');
+    new Chart(cropGradingPerformanceCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Tomatoes', 'Apples', 'Lettuce', 'Peppers', 'Carrots'],
+            datasets: [
+                {
+                    label: 'Premium Grade (A+)',
+                    data: [40, 35, 30, 25, 20],
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                },
+                {
+                    label: 'Standard Grade (A)',
+                    data: [50, 55, 60, 65, 70],
+                    backgroundColor: 'rgba(255, 206, 86, 0.6)'
+                },
+                {
+                    label: 'Processing Grade (B)',
+                    data: [10, 10, 10, 10, 10],
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Percentage of Crop Graded'
+                    },
+                    stacked: true
+                },
+                x: {
+                    stacked: true
+                }
+            }
+        }
+    });
+</script>
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

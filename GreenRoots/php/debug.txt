@@ -1,0 +1,378 @@
+
+
+2024-12-20 07:27:32
+Request received
+Raw data: {"productId":"TEST001","name":"Test Product","latitude":23.8103,"longitude":90.4125,"details":"Test product details","quantity":"100 tons","price":"৳50/kg","season":"Year-round"}
+Decoded data: Array
+(
+    [productId] => TEST001
+    [name] => Test Product
+    [latitude] => 23.8103
+    [longitude] => 90.4125
+    [details] => Test product details
+    [quantity] => 100 tons
+    [price] => ৳50/kg
+    [season] => Year-round
+)
+
+Prepared products statement
+Bound parameters
+Executed products insert
+Executed locations insert
+Success response sent
+
+
+2024-12-20 07:32:48
+Request received
+Raw data: {"productId":"8999","name":"n1","latitude":123,"longitude":321,"details":"hiii","quantity":"9000","price":"60","season":"all year"}
+Decoded data: Array
+(
+    [productId] => 8999
+    [name] => n1
+    [latitude] => 123
+    [longitude] => 321
+    [details] => hiii
+    [quantity] => 9000
+    [price] => 60
+    [season] => all year
+)
+
+Prepared products statement
+Bound parameters
+Executed products insert
+Executed locations insert
+Success response sent
+
+
+2024-12-20 07:57:52
+Request received
+Raw data: {"productId":"001","name":"n1","latitude":123,"longitude":123,"details":"sfdg","quantity":"32","price":"12","season":"sadf"}
+Decoded data: Array
+(
+    [productId] => 001
+    [name] => n1
+    [latitude] => 123
+    [longitude] => 123
+    [details] => sfdg
+    [quantity] => 32
+    [price] => 12
+    [season] => sadf
+)
+
+Prepared products statement
+Bound parameters
+Executed products insert
+Executed locations insert
+Success response sent
+
+
+2024-12-20 08:00:35
+Get Products Request received
+Executing query: SELECT p.*, l.latitude, l.longitude 
+            FROM products p 
+            LEFT JOIN locations l ON p.product_id = l.product_id
+Found 6 products
+Successfully sent response
+
+
+2024-12-20 08:00:56
+Get Products Request received
+Executing query: SELECT p.*, l.latitude, l.longitude 
+            FROM products p 
+            LEFT JOIN locations l ON p.product_id = l.product_id
+Found 6 products
+Successfully sent response
+
+
+2024-12-20 08:01:23
+Get Products Request received
+Executing query: SELECT p.*, l.latitude, l.longitude 
+            FROM products p 
+            LEFT JOIN locations l ON p.product_id = l.product_id
+Found 6 products
+Successfully sent response
+
+
+2024-12-20 08:01:37
+Get Products Request received
+Executing query: SELECT p.*, l.latitude, l.longitude 
+            FROM products p 
+            LEFT JOIN locations l ON p.product_id = l.product_id
+Found 6 products
+Successfully sent response
+
+
+2024-12-20 08:01:45
+Get Products Request received
+Executing query: SELECT p.*, l.latitude, l.longitude 
+            FROM products p 
+            LEFT JOIN locations l ON p.product_id = l.product_id
+Found 6 products
+Successfully sent response
+
+
+2024-12-20 08:02:04
+Request received
+Raw data: {"productId":"123","name":"n1","latitude":123,"longitude":123,"details":"hi","quantity":"91","price":"92","season":"all"}
+Decoded data: Array
+(
+    [productId] => 123
+    [name] => n1
+    [latitude] => 123
+    [longitude] => 123
+    [details] => hi
+    [quantity] => 91
+    [price] => 92
+    [season] => all
+)
+
+Prepared products statement
+Bound parameters
+Executed products insert
+Executed locations insert
+Success response sent
+
+
+2024-12-20 08:02:04
+Get Products Request received
+Executing query: SELECT p.*, l.latitude, l.longitude 
+            FROM products p 
+            LEFT JOIN locations l ON p.product_id = l.product_id
+Found 7 products
+Successfully sent response
+
+
+2024-12-20 08:06:57
+Request received
+Raw data: {"productId":"123","name":"p123","latitude":123,"longitude":123,"details":"90","quantity":"123","price":"123","season":"all"}
+Decoded data: Array
+(
+    [productId] => 123
+    [name] => p123
+    [latitude] => 123
+    [longitude] => 123
+    [details] => 90
+    [quantity] => 123
+    [price] => 123
+    [season] => all
+)
+
+Prepared products statement
+Bound parameters
+Error: Duplicate entry '123' for key 'PRIMARY'
+
+
+2024-12-20 08:07:02
+Request received
+Raw data: {"productId":"123","name":"p123","latitude":123,"longitude":123,"details":"90","quantity":"123","price":"123","season":"all"}
+Decoded data: Array
+(
+    [productId] => 123
+    [name] => p123
+    [latitude] => 123
+    [longitude] => 123
+    [details] => 90
+    [quantity] => 123
+    [price] => 123
+    [season] => all
+)
+
+Prepared products statement
+Bound parameters
+Error: Duplicate entry '123' for key 'PRIMARY'
+
+
+2024-12-20 08:07:14
+Request received
+Raw data: {"productId":"P111","name":"p123","latitude":123,"longitude":123,"details":"90","quantity":"123","price":"123","season":"all"}
+Decoded data: Array
+(
+    [productId] => P111
+    [name] => p123
+    [latitude] => 123
+    [longitude] => 123
+    [details] => 90
+    [quantity] => 123
+    [price] => 123
+    [season] => all
+)
+
+Prepared products statement
+Bound parameters
+Executed products insert
+Executed locations insert
+Success response sent
+
+
+2024-12-20 10:53:15
+Request received
+Raw data: {"productId":"Tanvir6209","name":"Tanvir Mahmud","latitude":0.0005,"longitude":-0.0005,"details":"Student","quantity":"1","price":"900","season":"All"}
+Decoded data: Array
+(
+    [productId] => Tanvir6209
+    [name] => Tanvir Mahmud
+    [latitude] => 0.0005
+    [longitude] => -0.0005
+    [details] => Student
+    [quantity] => 1
+    [price] => 900
+    [season] => All
+)
+
+Prepared products statement
+Bound parameters
+Executed products insert
+Executed locations insert
+Success response sent
+
+
+2024-12-20 10:54:45
+Request received
+Raw data: {"productId":"P1112","name":"P124","latitude":123,"longitude":981,"details":"KBJDFV","quantity":"95","price":"9787","season":"1234"}
+Decoded data: Array
+(
+    [productId] => P1112
+    [name] => P124
+    [latitude] => 123
+    [longitude] => 981
+    [details] => KBJDFV
+    [quantity] => 95
+    [price] => 9787
+    [season] => 1234
+)
+
+Prepared products statement
+Bound parameters
+Executed products insert
+Executed locations insert
+Success response sent
+
+
+2024-12-20 11:01:21
+Request received
+Raw data: {"productId":"t123","name":"t123","latitude":19,"longitude":20,"details":"s.kladhf","quantity":"123","price":"90","season":"all"}
+Decoded data: Array
+(
+    [productId] => t123
+    [name] => t123
+    [latitude] => 19
+    [longitude] => 20
+    [details] => s.kladhf
+    [quantity] => 123
+    [price] => 90
+    [season] => all
+)
+
+Prepared products statement
+Bound parameters
+Executed products insert
+Executed locations insert
+Success response sent
+
+
+2024-12-21 04:28:22
+Request received
+Raw data: {"productId":"n2","name":"n1","latitude":123,"longitude":123,"details":"sdfg","quantity":"45","price":"45","season":"ggg"}
+Decoded data: Array
+(
+    [productId] => n2
+    [name] => n1
+    [latitude] => 123
+    [longitude] => 123
+    [details] => sdfg
+    [quantity] => 45
+    [price] => 45
+    [season] => ggg
+)
+
+Prepared products statement
+Bound parameters
+Executed products insert
+Executed locations insert
+Success response sent
+
+
+2024-12-21 05:20:48
+Request received
+Raw data: {"productId":"T10","name":"T10","latitude":19,"longitude":20,"details":"Product test","quantity":"123","price":"123","season":"all"}
+Decoded data: Array
+(
+    [productId] => T10
+    [name] => T10
+    [latitude] => 19
+    [longitude] => 20
+    [details] => Product test
+    [quantity] => 123
+    [price] => 123
+    [season] => all
+)
+
+Prepared products statement
+Bound parameters
+Executed products insert
+Executed locations insert
+Success response sent
+
+
+2024-12-21 08:28:15
+Request received
+Raw data: {"productId":"n2","name":"n1","latitude":123,"longitude":123,"details":"alll","quantity":"123","price":"123","season":"all"}
+Decoded data: Array
+(
+    [productId] => n2
+    [name] => n1
+    [latitude] => 123
+    [longitude] => 123
+    [details] => alll
+    [quantity] => 123
+    [price] => 123
+    [season] => all
+)
+
+Prepared products statement
+Bound parameters
+Error: Duplicate entry 'n2' for key 'PRIMARY'
+
+
+2024-12-21 08:45:10
+Request received
+Raw data: {"productId":"t3","name":"Test003","latitude":19,"longitude":90,"details":"zs,.djcnkjdnbs","quantity":"90","price":"90","season":"all"}
+Decoded data: Array
+(
+    [productId] => t3
+    [name] => Test003
+    [latitude] => 19
+    [longitude] => 90
+    [details] => zs,.djcnkjdnbs
+    [quantity] => 90
+    [price] => 90
+    [season] => all
+)
+
+Prepared products statement
+Bound parameters
+Executed products insert
+Executed locations insert
+Success response sent
+
+
+2024-12-31 21:14:06
+Request received
+Raw data: {"productId":"mg123","name":"sadita magi","latitude":23.685,"longitude":90.3563,"details":"adsfads","quantity":"98","price":"100","season":"all"}
+Decoded data: Array
+(
+    [productId] => mg123
+    [name] => sadita magi
+    [latitude] => 23.685
+    [longitude] => 90.3563
+    [details] => adsfads
+    [quantity] => 98
+    [price] => 100
+    [season] => all
+)
+
+Prepared products statement
+Bound parameters
+Executed products insert
+Executed locations insert
+Success response sent
